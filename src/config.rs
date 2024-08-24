@@ -2,6 +2,7 @@ use std::{fs, path::PathBuf};
 
 use homedir::my_home;
 use serde::{Deserialize, Serialize};
+use serde_json::json;
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -49,7 +50,30 @@ impl Config {
 
         // Check if config exists
         if !config_path.exists() {
-            return Err(anyhow::anyhow!("config file not found"));
+            println!("Config file not found, creating...");
+
+            let config = json!({
+                "apiKey": "lol",
+                "font": {
+                    "path": "smd.ttf",
+                    "size": 30
+                },
+                "widthOffsetPerc": 50,
+                "startHeight": 170,
+                "heightIncrement": 50,
+                "outputImage": {
+                    "path": "~/.config/tw/lmao.png",
+                    "width": 1920,
+                    "height": 1080
+                },
+                "todosPath": "~/.config/tw/todos",
+                "bgSetCommand": "swaymsg output HDMI-A-1 bg ~/dev/projects/tw/output.png fill"
+            });
+
+            let _ = fs::File::create_new(config_path.clone()).expect("couldn't create all the things");
+            let _ = fs::write(config_path.clone(), serde_json::to_string(&config).expect("couldn't serialize things"));
+
+            println!("Created");
         }
 
         let mut config = serde_json::from_str::<Config>(&fs::read_to_string(config_path)?)?;
