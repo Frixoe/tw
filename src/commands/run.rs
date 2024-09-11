@@ -3,9 +3,15 @@ use std::fs;
 use ab_glyph::{FontArc, PxScale};
 use image::{ImageBuffer, Rgba};
 use imageproc::drawing::draw_text_mut;
-use reqwest::{header::{HeaderMap, HeaderValue, AUTHORIZATION, CONTENT_TYPE}, ClientBuilder};
+use reqwest::{
+    header::{HeaderMap, HeaderValue, AUTHORIZATION, CONTENT_TYPE},
+    ClientBuilder,
+};
 
-use crate::{types::{Item, Query}, Config};
+use crate::{
+    types::{Item, Query},
+    Config,
+};
 
 pub async fn run() -> anyhow::Result<()> {
     let mut config = match Config::get_config() {
