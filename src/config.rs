@@ -7,6 +7,7 @@ use serde_json::json;
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Config {
+    pub person_name: String,
     pub api_key: String,
     pub font: FontSettings,
     pub width_offset_perc: f32,
@@ -53,6 +54,7 @@ impl Config {
             println!("Config file not found, creating...");
 
             let config = json!({
+                "personName": "Suryansh",
                 "apiKey": "lol",
                 "font": {
                     "path": "smd.ttf",

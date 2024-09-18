@@ -22,22 +22,28 @@ pub async fn run() -> anyhow::Result<()> {
         }
     };
 
-    let get_items_query = r#"
-query GetBoardItemsByPerson {
-  boards(ids: 4539781298) {
-    items_page(
-      query_params: {rules: [{column_id: "person", compare_value: ["Suryansh"], operator: contains_text}]}
-    ) {
-      items {
-        name
-        column_values {
-          text
-          type
+    let get_items_query = [
+        r#"
+        query GetBoardItemsByPerson {
+          boards(ids: 4539781298) {
+            items_page(
+              query_params: {rules: [{column_id: "person", compare_value: [""#,
+        &config.person_name, // Insert dynamic value here
+        r#""], operator: contains_text}]}
+            ) {
+              items {
+                name
+                column_values {
+                  text
+                  type
+                }
+              }
+            }
+          }
         }
-      }
-    }
-  }
-}"#;
+        "#,
+    ]
+    .concat();
 
     let mut headers = HeaderMap::new();
     headers.insert(

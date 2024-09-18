@@ -4,7 +4,7 @@ use tw::commands::run;
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let matches = Command::new("tw")
-        .author("The Boogie Man")
+        .author("Suryansh S.<https://github.com/frixoe>")
         .about("Todo Wallpaper Manager:\nSet your todos as your wallpaper so this time you truly blame yourself")
         .version("0.1.0")
         .subcommand_required(false)
