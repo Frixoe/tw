@@ -3,6 +3,8 @@ name = "tw"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.80.1"
+description = "Your todos, as your wallpaper"
+license = "MIT"
 
 [dependencies]
 ab_glyph = "0.2.28"
