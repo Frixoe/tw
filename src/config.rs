@@ -8,12 +8,14 @@ use serde_json::json;
 #[serde(rename_all = "camelCase")]
 pub struct Config {
     pub person_name: String,
+    pub task_status: String,
     pub api_key: String,
     pub font: FontSettings,
     pub width_offset_perc: f32,
     pub start_height: i32,
     pub height_increment: i32,
     pub output_image: OutputImageSettings,
+    pub todos_only: bool,
     pub todos_path: String,
     pub bg_set_command: String,
 }

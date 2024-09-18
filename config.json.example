@@ -1,5 +1,6 @@
 {
     "personName": "a name",
+    "taskStatus": "Working on it",
     "apiKey": "fill with your API key",
     "font": {
         "path": "poppins.ttf",
@@ -13,6 +14,7 @@
         "width": 1920,
         "height": 1080
     },
+    "todosOnly": true,
     "todosPath": "~/dev/projects/tw/personal",
     "bgSetCommand": "swaymsg output HDMI-A-1 bg ~/dev/projects/tw/output.png fill"
 }

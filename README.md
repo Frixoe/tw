@@ -5,6 +5,8 @@ Your todos, as your wallpaper.
 Store your config in `~/.config/tw/config.json` in the following format:
 ```json
 {
+    "personName": "a name",
+    "taskStatus": "Working on it",
     "apiKey": "superSecretAPIKey",
     "font": {
         "path": "poppins.ttf",
@@ -18,6 +20,7 @@ Store your config in `~/.config/tw/config.json` in the following format:
         "width": 1920,
         "height": 1080
     },
+    "todosOnly": true,
     "todosPath": "~/dev/projects/tw/todods",
     "bgSetCommand": "swaymsg output HDMI-A-1 bg ~/.config/tw/output.png fill"
 }
@@ -43,6 +46,7 @@ Create a timer to run this as often as you expect to be changing your tasks
 ## Todos
 - [ ] Write docs
 - [ ] Update Commands section in Readme
+- [ ] Improve logging
 - [ ] Add support for custom backgrounds
 - [ ] Add support just personal TODO support
 - [ ] Infer the size, placement and font based on screen size
