@@ -39,4 +39,12 @@ mv target/release/tw ~/.local/bin/
 Create a timer to run this as often as you expect to be changing your tasks
 
 ## Commands
-TODO
+
+## Todos
+- [ ] Write docs
+- [ ] Update Commands section in Readme
+- [ ] Add support for custom backgrounds
+- [ ] Add support just personal TODO support
+- [ ] Infer the size, placement and font based on screen size
+- [ ] Provide a command to install a systemd service and run it
+- [ ] Instead of coordinates, ask the user for top-right/left, bottom-right/left positions for text placement
