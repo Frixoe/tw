@@ -1,0 +1,18 @@
+{
+    "personName": "a name",
+    "apiKey": "fill with your API key",
+    "font": {
+        "path": "poppins.ttf",
+        "size": 30
+    },
+    "widthOffsetPerc": 50,
+    "startHeight": 170,
+    "heightIncrement": 50,
+    "outputImage": {
+        "path": "./output.png",
+        "width": 1920,
+        "height": 1080
+    },
+    "todosPath": "~/dev/projects/tw/personal",
+    "bgSetCommand": "swaymsg output HDMI-A-1 bg ~/dev/projects/tw/output.png fill"
+}
